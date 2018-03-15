@@ -39,8 +39,9 @@ public class EmpregadoController extends HttpServlet {
         int id=0;
         
         if(request.getParameter("id")==null) {
-            disp = request.getRequestDispatcher("/index.jsp");
-            disp.forward(request, response);      
+            //disp = request.getRequestDispatcher("/empregados.jsp");
+            //disp.forward(request, response); 
+            response.sendRedirect("./empregados.jsp");
         }
         
         else 
@@ -64,9 +65,9 @@ public class EmpregadoController extends HttpServlet {
                 
             } else if(request.getParameter("acao").equals("excluir")) {
                 empDao.deletar(empregado);
-                //disp = request.getRequestDispatcher("/index.jsp");         
+                //disp = request.getRequestDispatcher("/empregados.jsp");         
                 //disp.forward(request, response);
-                response.sendRedirect("./index.jsp");
+                response.sendRedirect("./empregados.jsp");
                 
             }
             
@@ -75,7 +76,7 @@ public class EmpregadoController extends HttpServlet {
             
         } catch(RuntimeException ex) {
             mensagem = "Usuário não encontrado";
-            out.println( "<script> alert(' " + mensagem + " '); location.href='./index.jsp'  </script>" );
+            out.println( "<script> alert(' " + mensagem + " '); location.href='./empregados.jsp'  </script>" );
         }
  
         
@@ -124,7 +125,7 @@ public class EmpregadoController extends HttpServlet {
         
         out = response.getWriter();
         
-        out.println( "<script> alert(' " + mensagem + " '); location.href='./index.jsp'  </script>" );
+        out.println( "<script> alert(' " + mensagem + " '); location.href='./empregados.jsp'  </script>" );
         
     }
 

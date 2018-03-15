@@ -1,58 +1,13 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="menu.jsp" %>
 
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Lista de Empregados</title>
-
-    
-  </head>
-  
-  <body>
     
     <div class="container">
-        <h1 class="mt-5">Lista de Empregados</h1>
+        
+        
+        
+        <h1 class="mt-5">Bem-vindo</h1>
  
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Setor</th>
-              </tr>
-            </thead>
-            
-            <jsp:useBean id="empregadoDao" class="persistencia.EmpregadoDAO"/>
-            
-            <tbody>
-              <c:forEach var="empregado" items="${empregadoDao.lista}">
-
-            <tr>
-                <td>${empregado.id}</td>
-                <td>${empregado.nome}</td>
-                <td>${empregado.setor} 
-                    <div class="float-right">
-                        <a class="btn btn-primary" href="EmpregadoController?acao=editar&id=${empregado.id}">Editar</a>
-                        <a class="btn btn-danger" href="EmpregadoController?acao=excluir&id=${empregado.id}" onclick="return confirm('Deseja realmente excluir este registro?')">Excluir</a>
-                    </div>
-                </td>
-            </tr>
-
-            </c:forEach>
-            </tbody>          
-        </table>   
-            
-        <a class="btn btn-primary" href="cadastro.jsp">Novo Empregado</a><br>
+        <p>Sistema de Controle de Empregados</p>
             
     </div>
             
@@ -63,3 +18,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+
